@@ -43,7 +43,8 @@ Hooks.once("ready", () => {
     game.actors.contents.forEach(actor => applyScenarioActiveEffects(actor));
     Hooks.on("createActor", actor => applyScenarioActiveEffects(actor));
     Hooks.on("updateActor", actor => applyScenarioActiveEffects(actor));
-    Hooks.on("itemEquipChange", actor => applyScenarioActiveEffects(actor))
+    Hooks.on("itemEquipChange", actor => applyScenarioActiveEffects(actor));
+    Hooks.on("updateDynamicEffects", actor => applyScenarioActiveEffects(actor));
 
     Hooks.on("renderActiveEffectConfig", (app, html, data) => {
         const effect = app.document;
