@@ -7,7 +7,13 @@
     "verified": "13"
   },
   "description": "Introduces the concept of dynamic active effects for scenario shift first edition within Foundry 13",
-  "authors": [{"name": "Xamperxand"}],
+	"authors": [
+		{
+			"name": "xand",
+			"discord": "xamperxand",
+			"flags": {}
+		}],
   "esmodules": ["scenarioActiveEffects.js"],
+  "url": "https://github.com/Xampersand/scenario-active-effects",
   "manifest": "module.json"
 }
