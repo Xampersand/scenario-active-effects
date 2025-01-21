@@ -1,0 +1,13 @@
+{
+  "id": "scenario-active-effects",
+  "title": "Scenario Active Effects",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13"
+  },
+  "description": "Introduces the concept of dynamic active effects for scenario shift first edition within Foundry 13",
+  "authors": [{"name": "Xamperxand"}],
+  "esmodules": ["scenarioActiveEffects.js"],
+  "manifest": "module.json"
+}
