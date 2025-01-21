@@ -13,6 +13,8 @@
 			"discord": "xamperxand",
 			"flags": {}
 		}],
+  "license": "LICENSE.txt",
+  "readme": "README.md",
   "esmodules": ["scenarioActiveEffects.js"],
   "url": "https://github.com/Xampersand/scenario-active-effects",
   "manifest": "module.json"
