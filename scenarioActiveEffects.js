@@ -1,4 +1,9 @@
-async function applyScenarioActiveEffects(actor) {
+async function applyScenarioActiveEffects(actor, hook) {
+    if (!game.user.isGM) return;
+
+    let logged = `%cScenario Active Effects%c has applied effects from hook '${hook}'`
+    console.log(logged, 'color: #CF9FFF', 'color:rgb(116, 116, 116)');
+
     // Iterate through all items in the actor's inventory
     for (let item of actor.items) {
         // Check if the item has active effects with the 'isDynamic' flag
@@ -40,11 +45,11 @@ Hooks.once("ready", () => {
     let logged = '%cScenario Active Effects%c has successfully loaded.'
     console.log(logged, 'color: #CF9FFF', 'color:rgb(116, 116, 116)');
 
-    game.actors.contents.forEach(actor => applyScenarioActiveEffects(actor));
-    Hooks.on("createActor", actor => applyScenarioActiveEffects(actor));
-    Hooks.on("updateActor", actor => applyScenarioActiveEffects(actor));
-    Hooks.on("itemEquipChange", actor => applyScenarioActiveEffects(actor));
-    Hooks.on("updateDynamicEffects", actor => applyScenarioActiveEffects(actor));
+    game.actors.contents.forEach(actor => applyScenarioActiveEffects(actor, "init"));
+    Hooks.on("createActor", actor => applyScenarioActiveEffects(actor, "createActor"));
+    Hooks.on("updateActor", actor => applyScenarioActiveEffects(actor, "updateActor"));
+    Hooks.on("itemEquipChange", actor => applyScenarioActiveEffects(actor, "itemEquipChange"));
+    Hooks.on("updateDynamicEffects", actor => applyScenarioActiveEffects(actor, "updateDynamicEffects"));
 
     Hooks.on("renderActiveEffectConfig", (app, html, data) => {
         const effect = app.document;
